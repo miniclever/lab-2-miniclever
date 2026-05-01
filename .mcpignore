@@ -1,0 +1,6 @@
+# .mcpignore
+# Укажите здесь файлы и директории, к которым MCP FileSystem агент НЕ должен иметь доступ (Sandboxing).
+# Например:
+.env
+secret_keys/
+*.pem
