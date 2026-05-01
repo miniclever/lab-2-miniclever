@@ -1,0 +1,68 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/openclaw/.openclaw/workspace",
+      "model": {
+        "primary": "openai/GigaChat-Max"
+      },
+      "models": {
+        "openai/GigaChat-Max": {
+          "alias": "GigaChat-Max"
+        }
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "openai": {
+        "api": "openai-completions",
+        "baseUrl": "http://127.0.0.1:8090/v1",
+        "apiKey": "not-needed",
+        "models": [
+          {
+            "id": "GigaChat-Max",
+            "name": "GigaChat-Max",
+            "input": ["text"]
+          }
+        ]
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "botToken": "YOUR_TELEGRAM_BOT_TOKEN_HERE",
+      "enabled": true
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "YOUR_GATEWAY_AUTH_TOKEN_HERE"
+    },
+    "port": 18789,
+    "bind": "loopback",
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap", "camera.clip", "screen.record",
+        "contacts.add", "calendar.add", "reminders.add",
+        "sms.send", "sms.search"
+      ]
+    }
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "tools": {
+    "profile": "coding"
+  },
+  "commands": {
+    "ownerAllowFrom": [
+      "telegram:YOUR_TELEGRAM_USER_ID_HERE"
+    ]
+  }
+}
