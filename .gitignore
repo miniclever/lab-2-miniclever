@@ -1,21 +1,9 @@
-# Node.js
-node_modules/
-npm-debug.log
-yarn-error.log
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-venv/
-env/
-
-# OS Files
-.DS_Store
-Thumbs.db
-
-# Secrets
+# Никогда не коммитить файлы с секретами
+*.env
 .env
-*.pem
-*.key
+.env.*
+openclaw.json
+credentials/
+node_modules/
+.openclaw/
+*.log
